@@ -21,3 +21,14 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Other files from princeton
+percolation/PercolationVisualizer.java
+percolation/InteractivePercolationVisualizer.java
+*.txt
+*.png
+*.iml
+*.idea
+*.lift
+*/CREDITS
+*.pdf
