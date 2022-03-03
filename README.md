@@ -4,8 +4,7 @@ These are my solutions to the Course **Algorithms, Part I** by **Princeton Unive
 
 This part of the course covers elementary data structures, sorting, and searching algorithms with emphasis on applications and scientific performance analysis of Java implementations.
 
-| Coding Problem | Problem Description                                                               | Score   |
-|----------------|-----------------------------------------------------------------------------------|---------|
-| Percolation    | https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php | 100/100 |
-|                |                                                                                   |         |
-|                |                                                                                   |         |
+| Coding Challenge | Problem Description                                                               | Score   |
+|------------------|-----------------------------------------------------------------------------------|---------|
+| Percolation      | https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php | 100/100 |
+| Queues           | https://coursera.cs.princeton.edu/algs4/assignments/queues/specification.php      | 100/100 |
