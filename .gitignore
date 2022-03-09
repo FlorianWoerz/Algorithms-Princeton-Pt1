@@ -32,3 +32,6 @@ percolation/InteractivePercolationVisualizer.java
 *.lift
 */CREDITS
 *.pdf
+
+# Mac files
+*.DS_Store
