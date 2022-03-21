@@ -68,7 +68,7 @@ public class Board {
 
     // is this board the goal board?
     public boolean isGoal() {
-        return false;
+        return manhattan() == 0; // could have also checked if hamming() == 0
     }
 
     // does this board equal y?
