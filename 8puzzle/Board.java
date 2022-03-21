@@ -39,7 +39,7 @@ public class Board {
 
     // board dimension n
     public int dimension() {
-        return 0;
+        return dimension;
     }
 
     // number of tiles out of place
