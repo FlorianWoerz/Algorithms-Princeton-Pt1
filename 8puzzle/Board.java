@@ -43,8 +43,22 @@ public class Board {
     }
 
     // number of tiles out of place
+    // To measure how close a board is to the goal board, we define two notions of distance.
+    // The Hamming distance between a board and the goal board is the number of tiles in the wrong position.
     public int hamming() {
-        return 0;
+        int hamming = 0;
+        for (int i = 0; i < dimension(); i++) {
+            for (int j = 0; j < dimension(); j++) {
+                if (xyCoordinateTo1D(i, j) != board[i][j]) {
+                    hamming++;
+                }
+            }
+        }
+        return hamming - 1; // empty tile should be at the bottom right
+    }
+
+    private int xyCoordinateTo1D(int i, int j) {
+        return i * dimension() + j + 1;
     }
 
     // sum of Manhattan distances between tiles and goal
