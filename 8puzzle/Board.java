@@ -1,8 +1,28 @@
 // To begin, create a data type that models an n-by-n board with sliding tiles. Implement an immutable data type Board with the following API:
 public class Board {
+
+    private final int[][] board;
+    private final int dimension; // The private instance (or static) variable 'dimension' can be made 'final'; it is initialized only in the declaration or constructor.
+
     // create a board from an n-by-n array of tiles,
     // where tiles[row][col] = tile at (row, col)
     public Board(int[][] tiles) {
+        dimension = tiles.length;
+        // make board immutable
+        // check that Board is immutable by changing argument array after
+        // construction and making sure Board does not mutate
+        this.board = makeImmutable(tiles);
+
+    }
+
+    private int[][] makeImmutable(int[][] tiles) {
+        int[][] copy = new int[tiles.length][tiles.length];
+        for (int i = 0; i < dimension; i++) {
+            for (int j = 0; j < dimension; j++) {
+                copy[i][j] = tiles[i][j];
+            }
+        }
+        return copy;
     }
 
     // string representation of this board
