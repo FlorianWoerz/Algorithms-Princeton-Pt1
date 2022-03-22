@@ -11,11 +11,11 @@ public class Board {
         // make board immutable
         // check that Board is immutable by changing argument array after
         // construction and making sure Board does not mutate
-        this.board = makeImmutable(tiles);
+        this.board = makeImmutableCopy(tiles);
 
     }
 
-    private int[][] makeImmutable(int[][] tiles) {
+    private int[][] makeImmutableCopy(int[][] tiles) {
         int[][] copy = new int[tiles.length][tiles.length];
         for (int i = 0; i < dimension; i++) {
             for (int j = 0; j < dimension; j++) {
