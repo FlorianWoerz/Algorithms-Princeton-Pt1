@@ -8,3 +8,5 @@ This part of the course covers elementary data structures, sorting, and searchin
 |------------------|-----------------------------------------------------------------------------------|---------|
 | Percolation      | https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php | 100/100 |
 | Queues           | https://coursera.cs.princeton.edu/algs4/assignments/queues/specification.php      | 100/100 |
+| Collinear Points | https://coursera.cs.princeton.edu/algs4/assignments/collinear/specification.php   |         |
+| Slider Puzzle    | https://coursera.cs.princeton.edu/algs4/assignments/8puzzle/specification.php     |         |
