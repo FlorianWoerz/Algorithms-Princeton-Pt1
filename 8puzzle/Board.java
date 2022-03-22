@@ -115,7 +115,41 @@ public class Board {
 
     // all neighboring boards
     public Iterable<Board> neighbors() {
-        return null;
+        Stack<Board> neighborStack = new Stack<>();
+
+        int[] emptyTile = emptyTile();
+        int i = emptyTile[0];
+        int j = emptyTile[1];
+
+        if (i > 0)
+            neighborStack.push(new Board(swap(i, j, i - 1, j)));
+        if (i < dimension() - 1)
+            neighborStack.push(new Board(swap(i, j, i + 1, j)));
+        if (j > 0)
+            neighborStack.push(new Board(swap(i, j, i, j - 1)));
+        if (j < dimension() - 1)
+            neighborStack.push(new Board(swap(i, j, i, j + 1)));
+
+        return neighborStack;
+    }
+
+    private int[] emptyTile() {
+        for (int i = 0; i < dimension(); i++) {
+            for (int j = 0; j < dimension(); j++) {
+                if (board[i][j] == 0) {
+                    return new int[] { i, j };
+                }
+            }
+        }
+        return new int[] { -1, -1 }; // this never happens for a correct game board
+    }
+
+    private int[][] swap(int i1, int j1, int i2, int j2) {
+        int[][] copy = makeImmutableCopy(board);
+        int tmp = copy[i1][j1];
+        copy[i1][j1] = copy[i2][j2];
+        copy[i2][j2] = tmp;
+        return copy;
     }
 
     // a board that is obtained by exchanging any pair of tiles
