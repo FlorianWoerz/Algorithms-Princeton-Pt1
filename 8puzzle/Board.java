@@ -63,7 +63,24 @@ public class Board {
 
     // sum of Manhattan distances between tiles and goal
     public int manhattan() {
-        return 0;
+        int manhattan = 0;
+        for (int i = 0; i < dimension(); i++) {
+            for (int j = 0; j < dimension(); j++) {
+                if (board[i][j] == 0) continue;
+                // System.out.println("Coordinates: " + i + ", " + j);
+                int[] correctCoordinates = numberToXYPosition(board[i][j]);
+                int xDiff = Math.abs(correctCoordinates[0] - i);
+                int yDiff = Math.abs(correctCoordinates[1] - j);
+                // System.out.println("Correct Coordinate for " + board[i][j] + " at " + i + ", " + j + " : " + correctCoordinates[0] + ", " + correctCoordinates[1]);
+                // System.out.println("Adding " + xDiff + yDiff);
+                manhattan += xDiff + yDiff;
+                }
+            }
+        return manhattan;
+    }
+
+    private int[] numberToXYPosition(int num) {
+        return new int[]{(num - 1) / dimension(), (num - 1) % dimension()};
     }
 
     // is this board the goal board?
