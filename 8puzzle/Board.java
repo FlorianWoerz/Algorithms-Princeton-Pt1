@@ -80,7 +80,7 @@ public class Board {
     }
 
     private int[] numberToXYPosition(int num) {
-        return new int[]{(num - 1) / dimension(), (num - 1) % dimension()};
+        return new int[] { (num - 1) / dimension(), (num - 1) % dimension() };
     }
 
     // is this board the goal board?
