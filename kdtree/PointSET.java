@@ -17,29 +17,34 @@ public class PointSET {
     // it should support nearest() and range() in time proportional to the number of points in the
     // set.
 
+    private final TreeSet<Point2D> pointSet;
+
+
     // construct an empty set of points
     public PointSET() {
-        //
+        pointSet = new TreeSet<Point2D>();
     }
 
     // is the set empty?
     public boolean isEmpty() {
-        return false;
+        return pointSet.isEmpty();
     }
 
     // number of points in the set
     public int size() {
-        return 0;
+        return pointSet.size();
     }
 
     // add the point to the set (if it is not already in the set)
     public void insert(Point2D p) {
-        //
+        if (p == null) throw new IllegalArgumentException("Point cannot be null.");
+        pointSet.add(p);
     }
 
     // does the set contain point p?
     public boolean contains(Point2D p) {
-        return false;
+        if (p == null) throw new IllegalArgumentException("Point cannot be null.");
+        return pointSet.contains(p);
     }
 
     // draw all points to standard draw
