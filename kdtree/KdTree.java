@@ -36,9 +36,9 @@ public class KdTree {
         return size == 0;
     }
 
-    // number of points in the set
+    // number of nodes in the tree
     public int size() {
-        return 0;
+        return size;
     }
 
     // add the point to the set (if it is not already in the set)
