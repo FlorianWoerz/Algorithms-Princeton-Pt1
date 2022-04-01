@@ -31,9 +31,9 @@ public class KdTree {
         // size = 0;
     }
 
-    // is the set empty?
+    // is the tree empty?
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     // number of points in the set
