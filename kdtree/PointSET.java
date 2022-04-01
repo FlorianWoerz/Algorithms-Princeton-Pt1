@@ -5,6 +5,7 @@
  **************************************************************************** */
 
 import edu.princeton.cs.algs4.Point2D;
+import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.RectHV;
 import edu.princeton.cs.algs4.StdDraw;
 
@@ -62,7 +63,14 @@ public class PointSET {
 
     // all points that are inside the rectangle (or on the boundary)
     public Iterable<Point2D> range(RectHV rect) {
-        return null;
+        if (rect == null) throw new IllegalArgumentException("Rectangle cannot be null.");
+        Queue<Point2D> queue = new Queue<Point2D>();
+        for (Point2D p : pointSet) {
+            if (rect.contains(p)) {
+                queue.enqueue(p);
+            }
+        }
+        return queue;
     }
 
     // a nearest neighbor in the set to point p; null if the set is empty
