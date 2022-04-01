@@ -3,9 +3,32 @@ import edu.princeton.cs.algs4.RectHV;
 
 public class KdTree {
 
-    // construct an empty set of points
+    private static final double XMIN = 0.0;
+    private static final double XMAX = 1.0;
+    private static final double YMIN = 0.0;
+    private static final double YMAX = 1.0;
+
+    private Node root;          // root of kdTree
+    private int size;           // size of kdTree
+
+    private static class Node {
+        private final Point2D p;      // the point
+        private final RectHV rect;    // the axis-aligned rectangle corresponding to this node
+        private Node lb;        // the left/bottom subtree
+        private Node rt;        // the right/top subtree
+
+        public Node(Point2D p, RectHV rect) {
+            this.p = p;
+            this.rect = rect;
+            this.lb = null;
+            this.rt = null;
+        }
+    }
+
+
+    // construct an empty kdTree
     public KdTree() {
-        //
+        // size = 0;
     }
 
     // is the set empty?
