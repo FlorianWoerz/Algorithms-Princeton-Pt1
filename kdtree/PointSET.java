@@ -6,6 +6,9 @@
 
 import edu.princeton.cs.algs4.Point2D;
 import edu.princeton.cs.algs4.RectHV;
+import edu.princeton.cs.algs4.StdDraw;
+
+import java.util.TreeSet;
 
 // Brute-force implementation. Write a mutable data type PointSET.java that represents a set of
 // points in the unit square. Implement the following API by using a red–black BST (you must use
@@ -49,7 +52,12 @@ public class PointSET {
 
     // draw all points to standard draw
     public void draw() {
-        // 
+        StdDraw.clear();
+        StdDraw.setPenColor(StdDraw.BLACK);
+        StdDraw.setPenRadius(0.01);
+        for (Point2D p : pointSet) {
+            p.draw();
+        }
     }
 
     // all points that are inside the rectangle (or on the boundary)
