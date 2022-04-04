@@ -25,6 +25,9 @@ hs_err_pid*
 # Makefiles
 Makefile
 
+# Exclude the "Hello World" project
+hello/
+
 # Other files from princeton
 percolation/PercolationVisualizer.java
 percolation/InteractivePercolationVisualizer.java
