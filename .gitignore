@@ -31,6 +31,7 @@ hello/
 # Other files from princeton
 percolation/PercolationVisualizer.java
 percolation/InteractivePercolationVisualizer.java
+javahtml/
 *.txt
 *.png
 *.iml
