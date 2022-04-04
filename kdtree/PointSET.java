@@ -75,7 +75,19 @@ public class PointSET {
 
     // a nearest neighbor in the set to point p; null if the set is empty
     public Point2D nearest(Point2D p) {
-        return null;
+        if (p == null) throw new IllegalArgumentException("Point cannot be null.");
+        if (isEmpty()) {
+            return null;
+        } else {
+            Point2D minDistancePoint = null;
+            for (Point2D q : pointSet) {
+                // Do not call 'distanceTo()' in this program; instead use 'distanceSquaredTo()'. [Performance]
+                if (minDistancePoint == null || p.distanceSquaredTo(q) < p.distanceSquaredTo(minDistancePoint)) {
+                    minDistancePoint = q;
+                }
+            }
+            return minDistancePoint;
+        }
     }
 
     // unit testing of the methods (optional)
