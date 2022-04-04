@@ -1,7 +1,8 @@
 /* *****************************************************************************
- *  Name:
- *  Date:
- *  Description:
+ *  Name:              Florian Woerz
+ *  Course:            Algorithms, Part I by Princeton University
+ *  Submitted:         2022-04-01
+ *  Score:             97/100
  **************************************************************************** */
 
 import edu.princeton.cs.algs4.Point2D;
@@ -11,47 +12,79 @@ import edu.princeton.cs.algs4.StdDraw;
 
 import java.util.TreeSet;
 
-// Brute-force implementation. Write a mutable data type PointSET.java that represents a set of
-// points in the unit square. Implement the following API by using a red–black BST (you must use
-// either SET or java.util.TreeSet; do not implement your own red–black BST.
+
+/**
+ * Provides a data type to represent a set of points in the unit square (i.e., all points have x-
+ * and y-coordinates between 0 and 1) using a 2d-tree to support efficient range search (finding of
+ * all of the points contained in a query rectangle) and nearest-neighbor search (find a closest
+ * point to a query point). We will implement a brute-force approach, *NOT* using a red-black BST.
+ * <p>
+ * Our implementation supports insert() and contains() in time proportional to the logarithm of the
+ * number of points in the set in the worst case.
+ * It furthermore supports nearest() and range() in time proportional to the number of points in the
+ * set.
+ *
+ * @author Florian Woerz
+ */
 public class PointSET {
-    // Corner cases.  Throw an IllegalArgumentException if any argument is null.
-    // Performance requirements.  Your implementation should support insert() and contains() in
-    // time proportional to the logarithm of the number of points in the set in the worst case;
-    // it should support nearest() and range() in time proportional to the number of points in the
-    // set.
 
     private final TreeSet<Point2D> pointSet;
 
 
-    // construct an empty set of points
+    /**
+     * Constructs an empty set of points
+     */
     public PointSET() {
         pointSet = new TreeSet<Point2D>();
     }
 
-    // is the set empty?
+
+    /**
+     * Checks if the set is empty
+     *
+     * @return true if the set is empty; false if it contains at least one point
+     */
     public boolean isEmpty() {
         return pointSet.isEmpty();
     }
 
-    // number of points in the set
+
+    /**
+     * Returns the number of points in the set
+     *
+     * @return number of points in the set
+     */
     public int size() {
         return pointSet.size();
     }
 
-    // add the point to the set (if it is not already in the set)
+
+    /**
+     * Adds the point p to the set (if it is not already in the set)
+     *
+     * @param p point to add
+     */
     public void insert(Point2D p) {
         if (p == null) throw new IllegalArgumentException("Point cannot be null.");
         pointSet.add(p);
     }
 
-    // does the set contain point p?
+
+    /**
+     * Checks if the set contains a point p
+     *
+     * @param p point to check containment
+     * @return true if the set contains p; false otherwise
+     */
     public boolean contains(Point2D p) {
         if (p == null) throw new IllegalArgumentException("Point cannot be null.");
         return pointSet.contains(p);
     }
 
-    // draw all points to standard draw
+
+    /**
+     * Draws all points to standard draw
+     */
     public void draw() {
         StdDraw.clear();
         StdDraw.setPenColor(StdDraw.BLACK);
@@ -61,7 +94,14 @@ public class PointSET {
         }
     }
 
-    // all points that are inside the rectangle (or on the boundary)
+
+    /**
+     * Returns an iterable for all points that are inside the specified rectangle
+     * (or on the boundary)
+     *
+     * @param rect Rectangle whose contained points should be included in the iterable
+     * @return iterable over points inside the rectangle
+     */
     public Iterable<Point2D> range(RectHV rect) {
         if (rect == null) throw new IllegalArgumentException("Rectangle cannot be null.");
         Queue<Point2D> queue = new Queue<Point2D>();
@@ -73,7 +113,13 @@ public class PointSET {
         return queue;
     }
 
-    // a nearest neighbor in the set to point p; null if the set is empty
+
+    /**
+     * Returns a nearest neighbor in the set to point p; null if the set is empty
+     *
+     * @param p point whose nearest neighbor should be returned
+     * @return a nearest neighbor point in the set w.r.t. point p; null if the set is empty
+     */
     public Point2D nearest(Point2D p) {
         if (p == null) throw new IllegalArgumentException("Point cannot be null.");
         if (isEmpty()) {
@@ -90,8 +136,8 @@ public class PointSET {
         }
     }
 
-    // unit testing of the methods (optional)
+    // Unit testing of the methods (optional)
     public static void main(String[] args) {
-        //
+        // No tests included.
     }
 }
