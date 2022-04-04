@@ -10,3 +10,4 @@ This part of the course covers elementary data structures, sorting, and searchin
 | Queues           | https://coursera.cs.princeton.edu/algs4/assignments/queues/specification.php      | 100/100 |
 | Collinear Points | https://coursera.cs.princeton.edu/algs4/assignments/collinear/specification.php   |         |
 | Slider Puzzle    | https://coursera.cs.princeton.edu/algs4/assignments/8puzzle/specification.php     |         |
+| Kd-Trees         | https://coursera.cs.princeton.edu/algs4/assignments/kdtree/specification.php      |         |
